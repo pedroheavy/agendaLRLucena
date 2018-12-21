@@ -1,0 +1,21 @@
+@(contatos: List[Contato])
+
+<h1>Todos os contatos</h1>
+<form action="@routes.HomeController.sair()">
+    <button type="submit">Sair</button>
+</form>
+<table>
+    <tr><td>Id</td> <td>Nome</td> <td>Email</td> <td>Telefone</td><td>Opções</td></tr>
+    @for(contato <- contatos){
+        <tr>
+            <td><a href="@routes.ContatosController.edit(contato.id)">@contato.id</a></td>
+            <td>@contato.nome</td>
+            <td>@contato.email</td>
+            <td>@contato.telefone</td>
+            <td><a href="@routes.ContatosController.destroy(contato.id)">Excluir</a></td>
+        </tr>
+    }
+</table>
+<form action="@routes.ContatosController.create">
+    <button type="submit">Inserir</button>
+</form>

@@ -1,0 +1,10 @@
+@(contato: Contato)
+
+<p>Id: @contato.id</p>
+<p>Nome: @contato.nome</p>
+<p>Email: @contato.email</p>
+<p>Telefone: @contato.telefone</p>
+
+<form action="@routes.ContatosController.index()">
+    <button type="submit">Voltar</button>
+</form>

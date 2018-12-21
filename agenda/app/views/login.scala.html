@@ -1,0 +1,11 @@
+@(formUsuario: Form[Usuario])
+
+@import helper._
+@main("login") {
+    @helper.form(action=routes.HomeController.autenticar()) {
+        <h1>Login</h1>
+        @helper.inputText(formUsuario("email"),'name -> "email")
+        @helper.inputPassword(formUsuario("senha"),'name -> "senha")
+        <button action="submit">Entrar</button>
+    }
+}
